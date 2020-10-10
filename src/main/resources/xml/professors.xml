@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE professors SYSTEM "src/main/resources/xml/professors.dtd">
+<professors>
+    <professor id="5eddf70c76ffe429fa0fc113" title="PROF_DR" firstName="Peter" lastName="Mattheis" faculty="WI" jobStart="2001-10-17" email="peter.mattheis@hs-furtwangen.de" phoneNumber="77239202236">
+        <talkingTimes>
+            <talkingTime campus="FURTWANGEN" room="I2.02" day="MONDAY" startTime="10:00" endTime="12:00"/>
+        </talkingTimes>
+        <subjects>
+            <subject id="5eddf716ceb1501fa39286d7" semester="1" name="Einführung in Wissenschaftliches Arbeiten" from="2001-10-17">
+                <reviews>
+                    <review id="5eddf737c427e1b747076742" rating="8" title="Super" published="2020-06-08">Super Toll</review>
+                </reviews>
+            </subject>
+        </subjects>
+        <thumbnails>
+            <thumbnail url="https://dateparp.sirv.com/WP_co2abgabe.de/2017/04/Mattheis_2.gif" title="Bild" />
+        </thumbnails>
+    </professor>
+    <professor id="5edf1e8f1c4dc06c850bc412" firstName="Martin" lastName="Buchheit" faculty="WI" jobStart="2009-10-01" title="PROF_DR" email="martin.buchheit@hs-furtwangen.de" phoneNumber="77239202911">
+        <talkingTimes>
+            <talkingTime campus="FURTWANGEN" room="I2.06" day="THUESDAY" startTime="09:30" endTime="11:00"/>
+        </talkingTimes>
+        <subjects>
+            <subject id="5edf1f92213dda47f1297120" semester="3" name="Software Engineering" from="2009-10-01">
+                <reviews>
+                    <review id="5edf202bf50d076b24d3d742" rating="8" title="Toll" published="2020-05-03">Super Toll</review>
+                    <review id="5edf205a2db8430bb5c75284" rating="8" title="Toll" published="2020-06-03">Super Toll</review>
+                </reviews>
+            </subject>
+            <subject id="5edf1ff05bac6efeeb04e6b4" semester="5" name="Verteilte und Mobile Systeme" from="2009-10-01">
+                <reviews>
+                    <review id="5edf20710b5924ee33850321" rating="9" title="Toll" published="2010-06-12">Gut</review>
+                </reviews>
+            </subject>
+        </subjects>
+        <thumbnails>
+            <thumbnail url="https://www.virtual-developer.com/wp-content/uploads/2013/01/Virtual_Developer_Codegenerierung_Hochschule_Furtwangen_2013_Januar-1024x768.jpg"/>
+        </thumbnails>
+    </professor>
+    <professor id="5edf214f05ae89a5ed02ab29" firstName="Johann Anton" lastName="Illik" faculty="WI" jobStart="1992-10-01" title="PROF" phoneNumber="77239202322" email="il@hs-furtwangen.de">
+        <talkingTimes>
+            <talkingTime campus="FURTWANGEN" room="I2.03" day="WEDNESDAY" startTime="14:15" endTime="15:45"/>
+        </talkingTimes>
+        <subjects>
+            <subject id="5edf2283e6d0fa70f66a8a46" semester="1" name="Programmieren 1" from="1992-10-01">
+                <reviews>
+                    <review id="5edf22c8713387824bd21aa4" rating="8" title="Toll" published="1992-10-01">Gut</review>
+                    <review id="5edf22e82ae6a77ef7dc9c9e" rating="8" title="Gut" published="1992-10-01">Gut</review>
+                    <review id="5edf22f1700606cc90eeb9f3" rating="8" title="Gut" published="1992-10-01">Gut</review>
+                </reviews>
+            </subject>
+            <subject id="5edf23089607ef4760ab0bd6" semester="2" name="Programmieren 2" from="1992-10-01">
+                <reviews>
+                    <review id="5edf23290d9d39034cc10724" rating="8" title="Gut" published="1992-10-01">Gut</review>
+                </reviews>
+            </subject>
+        </subjects>
+        <thumbnails>
+            <thumbnail url="https://i.pinimg.com/280x280_RS/4d/a7/6e/4da76e6e7d8dd570016cf7e8c3adab89.jpg"/>
+        </thumbnails>
+    </professor>
+</professors>

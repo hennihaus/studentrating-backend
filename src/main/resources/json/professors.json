@@ -1,0 +1,213 @@
+[
+  {
+    "id": "5ec85993ace5c63c8d5972e9",
+    "title": "PROF_DR_ING",
+    "firstName": "Ulf",
+    "lastName": "Schreier",
+    "faculty": "WI",
+    "jobStart": "2009-10-17",
+    "email": "ulf.schreier@hs-furtwangen.de",
+    "phoneNumber": "77239202153",
+    "subjects": [
+      {
+        "id": "5ec85993ace5c63c8d597269",
+        "semester": 2,
+        "name": "Formale Methoden und Datenstrukturen",
+        "from": "2009-10-17",
+        "reviews": [
+          {
+            "id": "5ec85993ace5c63c8d597193",
+            "rating": 4.43,
+            "title": "Super",
+            "text": "Super",
+            "published": "2014-08-11"
+          },
+          {
+            "id": "5ec85993ace5c63c8d597194",
+            "rating": 4.42,
+            "title": "Super",
+            "text": "Gut",
+            "published": "2012-04-25"
+          },
+          {
+            "id": "5ec865cf78d7de2defc049ca",
+            "rating": 2.87,
+            "title": "Super",
+            "text": "OK",
+            "published": "2010-03-11"
+          }
+        ]
+      }
+    ],
+    "thumbnails": [
+      {
+        "url": "https://www.services-computing.de/wp-content/uploads/2017/05/UlfSchreier2017.jpg"
+      }
+    ]
+  },
+  {
+    "id": "5ec85993ace5c63c8d597192",
+    "title": "PROF_DR",
+    "firstName": "Guido",
+    "lastName": "Siestrup",
+    "faculty": "WI",
+    "jobStart": "2004-07-23",
+    "email": "guido.siestrup@hs-furtwangen.de",
+    "phoneNumber": "77239209240",
+    "subjects": [
+      {
+        "id": "5ec85993ace5c63c8d597191",
+        "semester": 1,
+        "name": "Betriebswirtschaftslehre",
+        "from": "2004-07-23",
+        "reviews": [
+          {
+            "id": "5ec85992ace5c63c8d5970a9",
+            "rating": 4.89,
+            "title": "Super",
+            "text": "Toll",
+            "published": "2010-07-02"
+          },
+          {
+            "id": "5ec85992ace5c63c8d5970aa",
+            "rating": 4.51,
+            "title": "Super",
+            "text": "Gut",
+            "published": "2008-11-28"
+          },
+          {
+            "id": "5ec85992ace5c63c8d5970ab",
+            "rating": 2.94,
+            "title": "Super",
+            "text": "OK",
+            "published": "2012-06-30"
+          }
+        ]
+      },
+      {
+        "id": "5ec861023f811f0884266f3e",
+        "semester": 2,
+        "name": "Geschäftsprozessdesign",
+        "from": "2004-07-23",
+        "reviews": [
+          {
+            "id": "5ec8612fcd01fde0f88a3105",
+            "rating": 4.89,
+            "title": "Super",
+            "text": "Toll",
+            "published": "2010-07-02"
+          },
+          {
+            "id": "5ec861365a307def1356d0ee",
+            "rating": 4.51,
+            "title": "Super",
+            "text": "Gut",
+            "published": "2008-11-28"
+          },
+          {
+            "id": "5ec8613aba248078a94934a2",
+            "rating": 2.94,
+            "title": "Super",
+            "text": "OK",
+            "published": "2012-06-30"
+          }
+        ]
+      }
+    ],
+    "thumbnails": [
+      {
+        "url": "https://www.hs-furtwangen.de/fileadmin/_processed_/c/2/csm_GSiestrup_9ad6b28b01.jpg"
+      }
+    ]
+  },
+  {
+    "id": "5ec85994ace5c63c8d597577",
+    "title": "PROF_DR",
+    "firstName": "Andreas",
+    "lastName": "Heß",
+    "faculty": "WI",
+    "jobStart": "2005-08-22",
+    "email": "andreas.hess@hs-furtwangen.de",
+    "phoneNumber": "77239202949",
+    "subjects": [
+      {
+        "id": "5ec85993ace5c63c8d597348",
+        "semester": 1,
+        "name": "Datenbanken",
+        "from": "2005-08-22",
+        "reviews": [
+          {
+            "id": "5ec85993ace5c63c8d5972ea",
+            "rating": 4.16,
+            "title": "Super",
+            "text": "Toll",
+            "published": "2017-06-23"
+          },
+          {
+            "id": "5ec85993ace5c63c8d5972eb",
+            "rating": 3.88,
+            "title": "Super",
+            "text": "Gut",
+            "published": "2014-02-20"
+          }
+        ]
+      },
+      {
+        "id": "5ec85993ace5c63c8d5973a6",
+        "semester": 2,
+        "name": "Systemarchitektur",
+        "from": "2005-08-22",
+        "reviews": [
+          {
+            "id": "5ec85993ace5c63c8d597349",
+            "rating": 4.25,
+            "title": "Super",
+            "text": "Toll",
+            "published": "2015-01-27"
+          },
+          {
+            "id": "5ec85993ace5c63c8d59734a",
+            "rating": 3.23,
+            "title": "Super",
+            "text": "OK",
+            "published": "2019-04-26"
+          },
+          {
+            "id": "5ec85993ace5c63c8d59734b",
+            "rating": 4.7,
+            "title": "Super",
+            "text": "Gut",
+            "published": "2019-05-02"
+          }
+        ]
+      },
+      {
+        "id": "5ec85994ace5c63c8d597576",
+        "semester": 1,
+        "name": "IBS 1 Programming Fundamentals Practicals",
+        "from": "2005-08-22",
+        "reviews": [
+          {
+            "id": "5ec85993ace5c63c8d5973a7",
+            "rating": 4.32,
+            "title": "Super",
+            "text": "Gut",
+            "published": "2007-01-03"
+          },
+          {
+            "id": "5ec85993ace5c63c8d5973a8",
+            "rating": 2.77,
+            "title": "Super",
+            "text": "Ok",
+            "published": "2009-02-08"
+          }
+        ]
+      }
+    ],
+    "thumbnails": [
+      {
+        "url": "https://www.xing.com/image/f_a_c_51dd1a62c_3174364_10/andreas-he%C3%9F-foto.1024x1024.jpg"
+      }
+    ]
+  }
+]

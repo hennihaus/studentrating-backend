@@ -1,0 +1,34 @@
+<!ELEMENT professors (professor)*>
+<!ELEMENT professor (talkingTimes?, subjects?, thumbnails?)>
+<!ATTLIST professor id CDATA #REQUIRED>
+<!ATTLIST professor title (PROF|PROF_DR|DR|PROF_DR_ING) #IMPLIED>
+<!ATTLIST professor firstName CDATA #REQUIRED>
+<!ATTLIST professor lastName CDATA #REQUIRED>
+<!ATTLIST professor faculty (WI|AIN|MIB) #REQUIRED>
+<!ATTLIST professor jobStart CDATA #REQUIRED>
+<!ATTLIST professor email CDATA #REQUIRED>
+<!ATTLIST professor phoneNumber CDATA #REQUIRED>
+<!ELEMENT talkingTimes (talkingTime)*>
+<!ELEMENT talkingTime EMPTY>
+<!ATTLIST talkingTime campus (FURTWANGEN|TUTTLINGEN|VILLINGEN_SCHWENNINGEN) #REQUIRED>
+<!ATTLIST talkingTime room CDATA #REQUIRED>
+<!ATTLIST talkingTime day (MONDAY|THUESDAY|WEDNESDAY|THURSDAY|FRIDAY) #REQUIRED>
+<!ATTLIST talkingTime startTime CDATA #REQUIRED>
+<!ATTLIST talkingTime endTime CDATA #REQUIRED>
+<!ELEMENT subjects (subject)*>
+<!ELEMENT subject (reviews)?>
+<!ATTLIST subject id CDATA #REQUIRED>
+<!ATTLIST subject semester CDATA #REQUIRED>
+<!ATTLIST subject name CDATA #REQUIRED>
+<!ATTLIST subject from CDATA #REQUIRED>
+<!ATTLIST subject to CDATA #IMPLIED>
+<!ELEMENT reviews (review)*>
+<!ELEMENT review (#PCDATA)>
+<!ATTLIST review id CDATA #REQUIRED>
+<!ATTLIST review rating CDATA #REQUIRED>
+<!ATTLIST review title CDATA #REQUIRED>
+<!ATTLIST review published CDATA #REQUIRED>
+<!ELEMENT thumbnails (thumbnail)*>
+<!ELEMENT thumbnail EMPTY>
+<!ATTLIST thumbnail url CDATA #REQUIRED>
+<!ATTLIST thumbnail title CDATA #IMPLIED>

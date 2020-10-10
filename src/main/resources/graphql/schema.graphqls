@@ -1,0 +1,102 @@
+scalar LocalDate
+scalar LocalDateTime
+
+type Query {
+    getAllProfs(sortDirection: SortDirection!): [Professor]
+    getAllProfsSearch(searchTerm: String): [Professor]
+    getProfById(id: ID!): Professor
+    getProfBySubjectId(id: ID!): Professor
+    getProfsBy(jobStartEarlierThan: LocalDate!, lastName: String!, faculty: Faculty!): [Professor]
+    getAllSubjects : [Subject]
+    getSubjectById(id: ID!): Subject
+    getReviewById(id: ID!): Review
+}
+ 
+type Mutation {
+    deleteProfBy(id: ID!): ID
+    createReview(review: ReviewWrapper): Review
+}
+
+type Professor {
+    id: ID,
+    title: Title,
+    firstName: String,
+    lastName: String,
+    faculty: Faculty,
+    jobStart: LocalDate,
+    averageRating: Float,
+    email: String,
+    phoneNumber: String,
+    talkingTimes: [TalkingTime],
+    subjects: [Subject],
+    thumbnails: [Thumbnail]
+}
+
+type Subject {
+    id: ID,
+    semester: Int,
+    name: String,
+    from: LocalDate,
+    to: LocalDate,
+    reviews: [Review]
+}
+
+type Review {
+    id: ID,
+    rating: Float,
+    title: String,
+    text: String,
+    published: LocalDate
+}
+
+type TalkingTime {
+    campus: Campus,
+    room: String,
+    startTime: LocalDateTime,
+    endTime: LocalDateTime,
+    day: Day
+}
+
+type Thumbnail {
+    url: String,
+    title: String
+}
+
+enum Day {
+    MONDAY,
+    THUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY
+}
+
+enum Title {
+    PROF,
+    PROF_DR,
+    DR,
+    PROF_DR_ING
+}
+
+enum Faculty {
+    WI,
+    AIN,
+    MIB
+}
+
+enum Campus {
+    FURTWANGEN,
+    TUTTLINGEN,
+    VILLINGEN_SCHWENNINGEN
+}
+
+enum SortDirection {
+    ASC,
+    DESC
+}
+
+input ReviewWrapper {
+    id: ID!,
+    rating: Float,
+    title: String,
+    text: String
+}
