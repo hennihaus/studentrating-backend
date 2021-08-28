@@ -1,3 +1,10 @@
+spring:
+  profiles:
+    active: dev
+  data:
+    mongodb:
+      port: 27017
+      database: studentrating
 graphql:
   servlet:
     mapping: /graphql
@@ -5,11 +12,5 @@ graphql:
     corsEnabled: true
   tools:
     schema-location-pattern: graphql/*.graphqls
-spring:
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: studentrating
 server:
-  port: 8099
+  port: 4203

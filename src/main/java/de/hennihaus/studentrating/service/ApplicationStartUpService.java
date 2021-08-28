@@ -22,17 +22,17 @@ import java.util.stream.Collectors;
 public class ApplicationStartUpService implements ApplicationListener<ApplicationReadyEvent> {
 
     private final ProfessorRepository professorRepository;
-    private final SubjectRepository subjectRepository;
-    private final GenerateRandomProfsService generateRandomProfsService;
-    private final ReadProfessorJsonService readProfessorJsonService;
-    private final ReadProfessorXmlService readProfessorXmlService;
+        private final SubjectRepository subjectRepository;
+        private final GenerateRandomProfsService generateRandomProfsService;
+        private final ReadProfessorJsonService readProfessorJsonService;
+        private final ReadProfessorXmlService readProfessorXmlService;
 
     @Autowired
     public ApplicationStartUpService(ProfessorRepository professorRepository, SubjectRepository subjectRepository, GenerateRandomProfsService generateRandomProfsService, ReadProfessorJsonService readProfessorJsonService, ReadProfessorXmlService readProfessorXmlService) {
-        this.professorRepository = professorRepository;
-        this.subjectRepository = subjectRepository;
-        this.generateRandomProfsService = generateRandomProfsService;
-        this.readProfessorJsonService = readProfessorJsonService;
+            this.professorRepository = professorRepository;
+            this.subjectRepository = subjectRepository;
+            this.generateRandomProfsService = generateRandomProfsService;
+            this.readProfessorJsonService = readProfessorJsonService;
         this.readProfessorXmlService = readProfessorXmlService;
     }
 
