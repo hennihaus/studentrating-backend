@@ -21,7 +21,7 @@ public class ReadProfessorXmlServiceImpl implements ReadProfessorXmlService {
     @Override
     public List<Professor> getProfs() {
         List<Professor> professors = new ArrayList<>();
-        Document document = getResourceFileAsDocument("./xml/professors.xml");
+        Document document = getResourceFileAsDocument("xml/professors.xml");
         NodeList profs = document.getDocumentElement().getElementsByTagName("professor");
         for (int i = 0; i < profs.getLength(); i++) {
             Element element = (Element) profs.item(i);

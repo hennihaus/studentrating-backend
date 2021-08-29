@@ -15,7 +15,7 @@ public class ReadProfessorJsonServiceImpl implements ReadProfessorJsonService {
 
     @Override
     public List<Professor> getProfs() throws JsonProcessingException {
-        String jsonString = getResourceFileAsString("./json/professors.json");
+        String jsonString = getResourceFileAsString("json/professors.json");
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new JavaTimeModule());
         return mapper.readValue(jsonString, mapper.getTypeFactory().constructCollectionType(List.class, Professor.class));
