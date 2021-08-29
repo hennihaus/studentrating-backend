@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE professors SYSTEM "src/main/resources/xml/professors.dtd">
+<!DOCTYPE professors>
 <professors>
     <professor id="5eddf70c76ffe429fa0fc113" title="PROF_DR" firstName="Peter" lastName="Mattheis" faculty="WI" jobStart="2001-10-17" email="peter.mattheis@hs-furtwangen.de" phoneNumber="77239202236">
         <talkingTimes>
