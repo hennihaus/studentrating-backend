@@ -1,14 +1,12 @@
 package de.hennihaus.studentrating.util;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.stream.Collectors;
@@ -25,27 +23,25 @@ public class FileUtils {
      * @return the file's contents or null if the file could not be opened
      */
     public static String getResourceFileAsString(String fileName) {
-        ClassLoader classLoader = ClassLoader.getSystemClassLoader();
-        InputStream inputStream = classLoader.getResourceAsStream(fileName);
-        if (inputStream != null) {
+        try {
+            InputStream inputStream = new ClassPathResource(fileName).getInputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, UTF_8));
             return reader.lines().collect(Collectors.joining(System.lineSeparator()));
+        } catch (Exception e) {
+            log.error("Error while reading ".concat(fileName).concat(": "), e);
+            return null;
         }
-        return null;
     }
 
     public static Document getResourceFileAsDocument(String fileName) {
-        ClassLoader classLoader = ClassLoader.getSystemClassLoader();
-        InputStream inputStream = classLoader.getResourceAsStream(fileName);
-        if (inputStream != null) {
-            try {
-                DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-                DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-                return dBuilder.parse(inputStream);
-            } catch (ParserConfigurationException | IOException | SAXException e) {
-                log.error("Error: ", e);
-            }
+        try {
+            InputStream inputStream = new ClassPathResource(fileName).getInputStream();
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            return dBuilder.parse(inputStream);
+        } catch (Exception e) {
+            log.error("Error while reading ".concat(fileName).concat(": "), e);
+            return null;
         }
-        return null;
     }
 }
