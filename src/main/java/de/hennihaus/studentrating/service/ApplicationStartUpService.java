@@ -6,9 +6,10 @@ import de.hennihaus.studentrating.repository.ProfessorRepository;
 import de.hennihaus.studentrating.repository.SubjectRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.index.TextIndexDefinition;
 import org.springframework.stereotype.Component;
 
 import java.text.ParseException;
@@ -21,19 +22,23 @@ import java.util.stream.Collectors;
 @Component
 public class ApplicationStartUpService implements ApplicationListener<ApplicationReadyEvent> {
 
-    private final ProfessorRepository professorRepository;
-        private final SubjectRepository subjectRepository;
-        private final GenerateRandomProfsService generateRandomProfsService;
-        private final ReadProfessorJsonService readProfessorJsonService;
-        private final ReadProfessorXmlService readProfessorXmlService;
+    private static final String FIRST_NAME_FIELD = "firstName";
+    private static final String LAST_NAME_FIELD = "lastName";
 
-    @Autowired
-    public ApplicationStartUpService(ProfessorRepository professorRepository, SubjectRepository subjectRepository, GenerateRandomProfsService generateRandomProfsService, ReadProfessorJsonService readProfessorJsonService, ReadProfessorXmlService readProfessorXmlService) {
-            this.professorRepository = professorRepository;
-            this.subjectRepository = subjectRepository;
-            this.generateRandomProfsService = generateRandomProfsService;
-            this.readProfessorJsonService = readProfessorJsonService;
+    private final ProfessorRepository professorRepository;
+    private final SubjectRepository subjectRepository;
+    private final GenerateRandomProfsService generateRandomProfsService;
+    private final ReadProfessorJsonService readProfessorJsonService;
+    private final ReadProfessorXmlService readProfessorXmlService;
+    private final MongoTemplate mongoTemplate;
+
+    public ApplicationStartUpService(ProfessorRepository professorRepository, SubjectRepository subjectRepository, GenerateRandomProfsService generateRandomProfsService, ReadProfessorJsonService readProfessorJsonService, ReadProfessorXmlService readProfessorXmlService, MongoTemplate mongoTemplate) {
+        this.professorRepository = professorRepository;
+        this.subjectRepository = subjectRepository;
+        this.generateRandomProfsService = generateRandomProfsService;
+        this.readProfessorJsonService = readProfessorJsonService;
         this.readProfessorXmlService = readProfessorXmlService;
+        this.mongoTemplate = mongoTemplate;
     }
 
     @Override
@@ -51,6 +56,12 @@ public class ApplicationStartUpService implements ApplicationListener<Applicatio
                     .stream()
                     .map(Professor::getSubjects)
                     .forEach(subjectRepository::saveAll);
+
+            TextIndexDefinition textIndex = new TextIndexDefinition.TextIndexDefinitionBuilder()
+                    .onField(FIRST_NAME_FIELD)
+                    .onField(LAST_NAME_FIELD)
+                    .build();
+            mongoTemplate.indexOps(Professor.class).ensureIndex(textIndex);
 
             Map<ObjectId, Professor> professorMap = professors.stream().collect(Collectors.toMap(Professor::getId, prof -> prof));
             log.info("Professor: " + professorMap.get(new ObjectId("5edf1e8f1c4dc06c850bc412")));
